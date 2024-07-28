@@ -6,10 +6,21 @@
 ![Contributors](https://img.shields.io/github/contributors/zyddnys/manga-image-translator)
 [![Discord](https://img.shields.io/discord/739305951085199490?logo=discord&label=discord&logoColor=white)](https://discord.gg/Ak8APNy4vb)
 
+使用方法
 
-> Translate texts in manga/images.\
-> [中文说明](README_CN.md) | [Change Log](CHANGELOG.md) \
-> Join us on discord <https://discord.gg/Ak8APNy4vb>
+```
+python -m manga_translator -v --detector ctd --inpainter lama_large --detection-size 2048 --ocr 48px --translator=gpt4 -l CHS --use-gpu --mode batch --gpt-config 'gpt.conf' -i <path>
+```
+
+网页版
+
+```
+python -m manga_translator -v --mode web --use-gpu
+```
+
+> Translate texts in manga/images.
+> [中文说明](README_CN.md) | [Change Log](CHANGELOG.md)
+> Join us on discord [https://discord.gg/Ak8APNy4vb](https://discord.gg/Ak8APNy4vb)
 
 Some manga/images will never be translated, therefore this project is born.
 
@@ -132,19 +143,20 @@ Please note that the samples may not always be updated, they may not represent t
 
 ## Online Demo
 
-Official Demo (by zyddnys): <https://touhou.ai/imgtrans/>\
-Browser Userscript (by QiroNT): <https://greasyfork.org/scripts/437569>
+Official Demo (by zyddnys): [https://touhou.ai/imgtrans/](https://touhou.ai/imgtrans/)Browser Userscript (by QiroNT): [https://greasyfork.org/scripts/437569](https://greasyfork.org/scripts/437569)
 
 - Note this may not work sometimes due to stupid google gcp kept restarting my instance.
   In that case you can wait for me to restart the service, which may take up to 24 hrs.
 - Note this online demo is using the current main branch version.
 
 ## Disclaimer
-Successor to [MMDOCR-HighPerformance](https://github.com/PatchyVideo/MMDOCR-HighPerformance).\
-**This is a hobby project, you are welcome to contribute!**\
-Currently this only a simple demo, many imperfections exist, we need your support to make this project better!\
-Primarily designed for translating Japanese text, but also supports Chinese, English and Korean.\
+
+Successor to [MMDOCR-HighPerformance](https://github.com/PatchyVideo/MMDOCR-HighPerformance).
+**This is a hobby project, you are welcome to contribute!**
+Currently this only a simple demo, many imperfections exist, we need your support to make this project better!
+Primarily designed for translating Japanese text, but also supports Chinese, English and Korean.
 Supports inpainting, text rendering and colorization.
+
 ## Installation
 
 ### Pip/venv
@@ -192,7 +204,7 @@ as some pip dependencies will not compile without it.
 (See [#114](https://github.com/zyddnys/manga-image-translator/issues/114)).
 
 To use [cuda](https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64)
-on windows install the correct pytorch version as instructed on <https://pytorch.org/>.
+on windows install the correct pytorch version as instructed on [https://pytorch.org/](https://pytorch.org/).
 
 Also, if you have trouble installing pydensecrf with the command above you can install the pre-compiled wheels
 with `pip install https://www.lfd.uci.edu/~gohlke/pythonlibs/#_pydensecrf`.
@@ -317,27 +329,32 @@ $ python -m manga_translator -v --mode web --use-gpu
 $ python -m manga_translator -v --mode api --use-gpu
 # the demo will be serving on http://127.0.0.1:5003
 ```
+
 ## Related Projects
+
 GUI implementation: [BallonsTranslator](https://github.com/dmMaze/BallonsTranslator)
 
 ## Docs
 
 ### Recommended Modules
+
 Detector:
+
 - ENG: ??
 - JPN: ??
 - CHS: ??
 - KOR: ??
 - Using `--detector ctd` can increase the amount of text lines detected
 
-
 OCR:
+
 - ENG: ??
 - JPN: ??
 - CHS: ??
 - KOR: 48px
 
 Translator:
+
 - JPN -> ENG: **Sugoi**
 - CHS -> ENG: ??
 - CHS -> JPN: ??
@@ -519,24 +536,24 @@ FIL: Filipino (Tagalog)
 
 ### Translators Reference
 
-| Name       | API Key | Offline | Note                                                   |
-|------------|---------|---------|--------------------------------------------------------|
-| google     |         |         |                                                        |
-| youdao     | ✔️      |         | Requires `YOUDAO_APP_KEY` and `YOUDAO_SECRET_KEY`      |
-| baidu      | ✔️      |         | Requires `BAIDU_APP_ID` and `BAIDU_SECRET_KEY`         |
-| deepl      | ✔️      |         | Requires `DEEPL_AUTH_KEY`                              |
-| caiyun     | ✔️      |         | Requires `CAIYUN_TOKEN`                                |
-| gpt3       | ✔️      |         | Implements text-davinci-003. Requires `OPENAI_API_KEY` |
-| gpt3.5     | ✔️      |         | Implements gpt-3.5-turbo. Requires `OPENAI_API_KEY`    |
-| gpt4       | ✔️      |         | Implements gpt-4. Requires `OPENAI_API_KEY`            |
-| papago     |         |         |                                                        |
-| sakura     |         |         |Requires `SAKURA_API_BASE`                               |
-| offline    |         | ✔️      | Chooses most suitable offline translator for language  |
-| sugoi      |         | ✔️      | Sugoi V4.0 Models                                      |
-| m2m100     |         | ✔️      | Supports every language                                |
-| m2m100_big |         | ✔️      |                                                        |
-| none       |         | ✔️      | Translate to empty texts                               |
-| original   |         | ✔️      | Keep original texts                                    |
+| Name       | API Key | Offline | Note                                                     |
+| ---------- | ------- | ------- | -------------------------------------------------------- |
+| google     |         |         |                                                          |
+| youdao     | ✔️    |         | Requires `YOUDAO_APP_KEY` and `YOUDAO_SECRET_KEY`    |
+| baidu      | ✔️    |         | Requires `BAIDU_APP_ID` and `BAIDU_SECRET_KEY`       |
+| deepl      | ✔️    |         | Requires `DEEPL_AUTH_KEY`                              |
+| caiyun     | ✔️    |         | Requires `CAIYUN_TOKEN`                                |
+| gpt3       | ✔️    |         | Implements text-davinci-003. Requires `OPENAI_API_KEY` |
+| gpt3.5     | ✔️    |         | Implements gpt-3.5-turbo. Requires `OPENAI_API_KEY`    |
+| gpt4       | ✔️    |         | Implements gpt-4. Requires `OPENAI_API_KEY`            |
+| papago     |         |         |                                                          |
+| sakura     |         |         | Requires `SAKURA_API_BASE`                             |
+| offline    |         | ✔️    | Chooses most suitable offline translator for language    |
+| sugoi      |         | ✔️    | Sugoi V4.0 Models                                        |
+| m2m100     |         | ✔️    | Supports every language                                  |
+| m2m100_big |         | ✔️    |                                                          |
+| none       |         | ✔️    | Translate to empty texts                                 |
+| original   |         | ✔️    | Keep original texts                                      |
 
 - API Key: Whether the translator requires an API key to be set as environment variable.
   For this you can create a .env file in the project root directory containing your api keys like so:
@@ -547,7 +564,6 @@ DEEPL_AUTH_KEY=xxxxxxxx...
 ```
 
 - Offline: Whether the translator can be used offline.
-
 - Sugoi is created by mingshiba, please support him in https://www.patreon.com/mingshiba
 
 ### GPT Config Reference
@@ -636,9 +652,9 @@ $ python -m manga_translator -v --mode api --use-gpu
 ```
 
 Api is accepting json(post) and multipart.
-<br>
+`<br>`
 Api endpoints are `/colorize_translate`, `/inpaint_translate`, `/translate`, `/get_text`.
-<br>
+`<br>`
 Valid arguments for the api are:
 
 ```
@@ -681,33 +697,34 @@ url: String // an url string
 </details>
 
 Manual translation replaces machine translation with human translators.
-Basic manual translation demo can be found at <http://127.0.0.1:5003/manual> when using web mode.
+Basic manual translation demo can be found at [http://127.0.0.1:5003/manual](http://127.0.0.1:5003/manual) when using web mode.
+
 <details closed>
 <summary>API</summary>
 <br>
 
-Two modes of translation service are provided by the demo: synchronous mode and asynchronous mode.\
-In synchronous mode your HTTP POST request will finish once the translation task is finished.\
+Two modes of translation service are provided by the demo: synchronous mode and asynchronous mode.
+In synchronous mode your HTTP POST request will finish once the translation task is finished.
 In asynchronous mode your HTTP POST request will respond with a `task_id` immediately, you can use this `task_id` to
 poll for translation task state.
 
 #### Synchronous mode
 
-1. POST a form request with form data `file:<content-of-image>` to <http://127.0.0.1:5003/run>
+1. POST a form request with form data `file:<content-of-image>` to [http://127.0.0.1:5003/run](http://127.0.0.1:5003/run)
 2. Wait for response
 3. Use the resultant `task_id` to find translation result in `result/` directory, e.g. using Nginx to expose `result/`
 
 #### Asynchronous mode
 
-1. POST a form request with form data `file:<content-of-image>` to <http://127.0.0.1:5003/submit>
+1. POST a form request with form data `file:<content-of-image>` to [http://127.0.0.1:5003/submit](http://127.0.0.1:5003/submit)
 2. Acquire translation `task_id`
-3. Poll for translation task state by posting JSON `{"taskid": <task-id>}` to <http://127.0.0.1:5003/task-state>
+3. Poll for translation task state by posting JSON `{"taskid": <task-id>}` to [http://127.0.0.1:5003/task-state](http://127.0.0.1:5003/task-state)
 4. Translation is finished when the resultant state is either `finished`, `error` or `error-lang`
 5. Find translation result in `result/` directory, e.g. using Nginx to expose `result/`
 
 #### Manual translation
 
-POST a form request with form data `file:<content-of-image>` to <http://127.0.0.1:5003/manual-translate>
+POST a form request with form data `file:<content-of-image>` to [http://127.0.0.1:5003/manual-translate](http://127.0.0.1:5003/manual-translate)
 and wait for response.
 
 You will obtain a JSON response like this:
@@ -740,7 +757,7 @@ Fill in translated texts:
 }
 ```
 
-Post translated JSON to <http://127.0.0.1:5003/post-manual-result> and wait for response.\
+Post translated JSON to [http://127.0.0.1:5003/post-manual-result](http://127.0.0.1:5003/post-manual-result) and wait for response.
 Then you can find the translation result in `result/` directory, e.g. using Nginx to expose `result/`.
 
 </details>
@@ -752,13 +769,11 @@ A list of what needs to be done next, you're welcome to contribute.
 1. Use diffusion model based inpainting to achieve near perfect result, but this could be much slower.
 2. ~~**IMPORTANT!!!HELP NEEDED!!!** The current text rendering engine is barely usable, we need your help to improve
    text rendering!~~
-3. Text rendering area is determined by detected text lines, not speech bubbles.\
-   This works for images without speech bubbles, but making it impossible to decide where to put translated English
+3. Text rendering area is determined by detected text lines, not speech bubbles.This works for images without speech bubbles, but making it impossible to decide where to put translated English
    text. I have no idea how to solve this.
 4. [Ryota et al.](https://arxiv.org/abs/2012.14271) proposed using multimodal machine translation, maybe we can add ViT
    features for building custom NMT models.
-5. Make this project works for video(rewrite code in C++ and use GPU/other hardware NN accelerator).\
-   Used for detecting hard subtitles in videos, generating ass file and remove them completely.
+5. Make this project works for video(rewrite code in C++ and use GPU/other hardware NN accelerator).Used for detecting hard subtitles in videos, generating ass file and remove them completely.
 6. ~~Mask refinement based using non deep learning algorithms, I am currently testing out CRF based algorithm.~~
 7. ~~Angled text region merge is not currently supported~~
 8. Create pip repository
@@ -767,12 +782,12 @@ A list of what needs to be done next, you're welcome to contribute.
 
 GPU server is not cheap, please consider to donate to us.
 
-- Ko-fi: <https://ko-fi.com/voilelabs>
-- Patreon: <https://www.patreon.com/voilelabs>
-- 爱发电: <https://afdian.net/@voilelabs>
+- Ko-fi: [https://ko-fi.com/voilelabs](https://ko-fi.com/voilelabs)
+- Patreon: [https://www.patreon.com/voilelabs](https://www.patreon.com/voilelabs)
+- 爱发电: [https://afdian.net/@voilelabs](https://afdian.net/@voilelabs)
 
   ### Thanks To All Our Contributors :
+
+
   <a href="https://github.com/zyddnys/manga-image-translator/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=zyddnys/manga-image-translator" />
-
-</a>

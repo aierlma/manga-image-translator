@@ -536,24 +536,24 @@ FIL: Filipino (Tagalog)
 
 ### Translators Reference
 
-| Name       | API Key | Offline | Note                                                     |
-| ---------- | ------- | ------- | -------------------------------------------------------- |
-| google     |         |         |                                                          |
-| youdao     | ✔️    |         | Requires `YOUDAO_APP_KEY` and `YOUDAO_SECRET_KEY`    |
-| baidu      | ✔️    |         | Requires `BAIDU_APP_ID` and `BAIDU_SECRET_KEY`       |
-| deepl      | ✔️    |         | Requires `DEEPL_AUTH_KEY`                              |
-| caiyun     | ✔️    |         | Requires `CAIYUN_TOKEN`                                |
-| gpt3       | ✔️    |         | Implements text-davinci-003. Requires `OPENAI_API_KEY` |
-| gpt3.5     | ✔️    |         | Implements gpt-3.5-turbo. Requires `OPENAI_API_KEY`    |
-| gpt4       | ✔️    |         | Implements gpt-4. Requires `OPENAI_API_KEY`            |
-| papago     |         |         |                                                          |
-| sakura     |         |         | Requires `SAKURA_API_BASE`                             |
-| offline    |         | ✔️    | Chooses most suitable offline translator for language    |
-| sugoi      |         | ✔️    | Sugoi V4.0 Models                                        |
-| m2m100     |         | ✔️    | Supports every language                                  |
-| m2m100_big |         | ✔️    |                                                          |
-| none       |         | ✔️    | Translate to empty texts                                 |
-| original   |         | ✔️    | Keep original texts                                      |
+| Name       | API Key | Offline | Note                                                   |
+|------------|---------|---------|--------------------------------------------------------|
+| <s>google</s>     |         |         |         Disabled temporarily                                               |
+| youdao     | ✔️      |         | Requires `YOUDAO_APP_KEY` and `YOUDAO_SECRET_KEY`      |
+| baidu      | ✔️      |         | Requires `BAIDU_APP_ID` and `BAIDU_SECRET_KEY`         |
+| deepl      | ✔️      |         | Requires `DEEPL_AUTH_KEY`                              |
+| caiyun     | ✔️      |         | Requires `CAIYUN_TOKEN`                                |
+| gpt3       | ✔️      |         | Implements text-davinci-003. Requires `OPENAI_API_KEY` |
+| gpt3.5     | ✔️      |         | Implements gpt-3.5-turbo. Requires `OPENAI_API_KEY`    |
+| gpt4       | ✔️      |         | Implements gpt-4. Requires `OPENAI_API_KEY`            |
+| papago     |         |         |                                                        |
+| sakura     |         |         |Requires `SAKURA_API_BASE`                               |
+| offline    |         | ✔️      | Chooses most suitable offline translator for language  |
+| sugoi      |         | ✔️      | Sugoi V4.0 Models                                      |
+| m2m100     |         | ✔️      | Supports every language                                |
+| m2m100_big |         | ✔️      |                                                        |
+| none       |         | ✔️      | Translate to empty texts                               |
+| original   |         | ✔️      | Keep original texts                                    |
 
 - API Key: Whether the translator requires an API key to be set as environment variable.
   For this you can create a .env file in the project root directory containing your api keys like so:

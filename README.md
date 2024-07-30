@@ -15,7 +15,7 @@ python -m manga_translator -v --inpainter lama_large --detection-size 2048 --ocr
 网页版
 
 ```
-python -m manga_translator -v --mode web --use-gpu --gpt-config 'gpt.conf'
+python -m manga_translator -v --mode web --use-gpu --gpt-config "gpt.conf"
 ```
 
 > Translate texts in manga/images.

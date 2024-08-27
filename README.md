@@ -9,7 +9,7 @@
 使用方法
 
 ```
-python -m manga_translator -v --inpainter lama_large --detection-size 2048 --ocr 48px --translator=gpt4 -l CHS --use-gpu --mode batch --gpt-config 'gpt.conf' -i <path>
+python -m manga_translator -v --inpainter lama_large --detection-size 2048 --ocr 48px --translator=gpt35 -l CHS --use-gpu --mode batch --gpt-config 'gpt.conf' -i <path>
 ```
 
 网页版
